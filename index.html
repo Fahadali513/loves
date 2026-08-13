@@ -15,7 +15,7 @@
     }
 
     body {
-      background-color: #0b0107;
+      background-color: #080005;
       color: #ffffff;
       min-height: 100vh;
       display: flex;
@@ -39,8 +39,8 @@
       bottom: -100px;
       font-size: 1.5rem;
       animation: floatUp 8s linear infinite;
-      opacity: 0.75;
-      filter: drop-shadow(0 0 6px rgba(255, 105, 180, 0.8));
+      opacity: 0.8;
+      filter: drop-shadow(0 0 8px rgba(255, 105, 180, 0.9));
     }
 
     @keyframes floatUp {
@@ -48,7 +48,7 @@
         transform: translateY(0) scale(0.8) rotate(0deg);
         opacity: 0;
       }
-      20% { opacity: 0.9; }
+      20% { opacity: 0.95; }
       100% {
         transform: translateY(-110vh) scale(1.3) rotate(360deg);
         opacity: 0;
@@ -65,14 +65,14 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      border: 1.5px solid rgba(255, 105, 180, 0.5);
-      border-radius: 28px;
+      border: 2px solid rgba(255, 105, 180, 0.6);
+      border-radius: 30px;
       position: relative;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: 0 0 50px rgba(236, 72, 153, 0.5);
+      box-shadow: 0 0 60px rgba(236, 72, 153, 0.6), inset 0 0 20px rgba(255, 182, 193, 0.2);
       z-index: 2;
     }
 
@@ -80,7 +80,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(13, 1, 7, 0.45) 0%, rgba(13, 1, 7, 0.88) 100%);
+      background: radial-gradient(circle at center, rgba(13, 1, 7, 0.4) 0%, rgba(13, 1, 7, 0.92) 100%);
       z-index: 1;
     }
 
@@ -104,20 +104,20 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
+      from { opacity: 0; transform: scale(0.94); }
       to { opacity: 1; transform: scale(1); }
     }
 
     /* Glassmorphic UI Card Box */
     .card-box {
-      background: rgba(18, 3, 12, 0.78);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1.5px solid rgba(255, 182, 193, 0.5);
-      border-radius: 26px;
-      padding: 24px 20px;
+      background: rgba(22, 4, 16, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255, 182, 193, 0.55);
+      border-radius: 28px;
+      padding: 26px 22px;
       width: 90%;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(255, 105, 180, 0.15);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 105, 180, 0.2);
       z-index: 3;
       display: flex;
       flex-direction: column;
@@ -128,16 +128,18 @@
     h1 {
       font-family: 'Georgia', serif;
       font-size: 2.1rem;
-      color: #ff9ebb;
+      background: linear-gradient(135deg, #ffb3c6, #ff4d8d, #f43f5e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
-      text-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
+      filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.6));
     }
 
     h2 {
       font-size: 1.45rem;
       color: #ff69b4;
       margin-bottom: 10px;
-      text-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+      text-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
     }
 
     p {
@@ -152,30 +154,38 @@
       width: 100%;
       padding: 12px 16px;
       border-radius: 25px;
-      border: 1px solid #ec4899;
-      background: rgba(0, 0, 0, 0.7);
+      border: 1.5px solid #ec4899;
+      background: rgba(0, 0, 0, 0.75);
       color: #fff;
       text-align: center;
       font-size: 1rem;
       outline: none;
       margin: 15px 0 10px 0;
+      box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
     }
 
     .btn {
-      background: linear-gradient(90deg, #ec4899, #f43f5e);
+      background: linear-gradient(90deg, #ec4899, #f43f5e, #e11d48);
+      background-size: 200% 100%;
       color: white;
       border: none;
-      padding: 12px 26px;
+      padding: 12px 28px;
       font-size: 1rem;
       font-weight: 600;
       border-radius: 25px;
       cursor: pointer;
-      box-shadow: 0 4px 18px rgba(236, 72, 153, 0.6);
-      transition: all 0.2s ease;
+      box-shadow: 0 4px 20px rgba(236, 72, 153, 0.7);
+      transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       margin-top: 15px;
+      animation: pulseBtn 2s infinite;
+    }
+
+    @keyframes pulseBtn {
+      0%, 100% { box-shadow: 0 4px 18px rgba(236, 72, 153, 0.6); }
+      50% { box-shadow: 0 4px 28px rgba(255, 105, 180, 0.9); }
     }
 
     .btn:active { transform: scale(0.95); }
@@ -249,8 +259,8 @@
       display: none;
       position: absolute;
       inset: 0;
-      background: rgba(11, 1, 7, 0.94);
-      backdrop-filter: blur(14px);
+      background: rgba(11, 1, 7, 0.95);
+      backdrop-filter: blur(16px);
       z-index: 1050;
       flex-direction: column;
       align-items: center;
@@ -272,7 +282,7 @@
     .folder-icon {
       font-size: 85px;
       cursor: pointer;
-      filter: drop-shadow(0 0 20px rgba(236, 72, 153, 1));
+      filter: drop-shadow(0 0 22px rgba(236, 72, 153, 1));
       animation: folderPulse 2s infinite ease-in-out;
     }
 
@@ -281,10 +291,10 @@
       50% { transform: scale(1.12) rotate(3deg); }
     }
 
-    /* Cake Elements */
+    /* --- BEAUTIFIED GLOWING CAKE STAGE --- */
     .cake-stage {
-      width: 220px;
-      height: 200px;
+      width: 230px;
+      height: 230px;
       position: relative;
       display: flex;
       flex-direction: column;
@@ -294,53 +304,87 @@
     }
 
     .cake-plate {
-      width: 210px;
-      height: 16px;
-      background: #e2e8f0;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+      width: 220px;
+      height: 18px;
+      background: linear-gradient(90deg, #f1f5f9, #ffffff, #cbd5e1);
+      border-radius: 50%;
+      box-shadow: 0 0 28px rgba(255, 182, 193, 0.8), 0 8px 15px rgba(0, 0, 0, 0.6);
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.5s ease;
+      position: relative;
     }
 
     .cake-layer-1 {
-      width: 170px;
-      height: 50px;
-      background: linear-gradient(180deg, #ff8da1, #e11d48);
+      width: 180px;
+      height: 55px;
+      background: linear-gradient(180deg, #ff8da1, #be123c);
+      border-radius: 12px 12px 0 0;
+      margin-bottom: -2px;
+      opacity: 0;
+      transform: translateY(-30px);
+      transition: all 0.5s ease;
+      position: relative;
+      box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .cake-layer-1::after {
+      content: '🌸 💕 🌸 💕 🌸';
+      position: absolute;
+      width: 100%;
+      top: 18px;
+      left: 0;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    .cake-layer-2 {
+      width: 130px;
+      height: 48px;
+      background: linear-gradient(180deg, #fbcfe8, #e11d48);
       border-radius: 10px 10px 0 0;
       margin-bottom: -2px;
       opacity: 0;
       transform: translateY(-30px);
       transition: all 0.5s ease;
+      position: relative;
+      box-shadow: inset 0 4px 10px rgba(255, 255, 255, 0.4);
     }
 
-    .cake-layer-2 {
-      width: 120px;
-      height: 40px;
-      background: linear-gradient(180deg, #fbcfe8, #f43f5e);
-      border-radius: 8px 8px 0 0;
-      margin-bottom: -2px;
-      opacity: 0;
-      transform: translateY(-30px);
-      transition: all 0.5s ease;
+    .cake-layer-2::after {
+      content: '💖 💖 💖';
+      position: absolute;
+      width: 100%;
+      top: 14px;
+      left: 0;
+      font-size: 0.8rem;
     }
 
     .cake-frosting {
-      width: 124px;
-      height: 12px;
+      width: 134px;
+      height: 18px;
       background: #ffffff;
-      border-radius: 10px;
-      margin-bottom: -6px;
+      border-radius: 14px 14px 10px 10px;
+      margin-bottom: -8px;
       opacity: 0;
       transform: scale(0.5);
       transition: all 0.4s ease;
       z-index: 3;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.8);
+      position: relative;
+    }
+
+    .candle-group {
+      display: flex;
+      gap: 14px;
+      position: relative;
+      z-index: 4;
+      margin-bottom: -2px;
     }
 
     .cake-candle {
       width: 10px;
-      height: 32px;
+      height: 36px;
       background: repeating-linear-gradient(45deg, #fbbf24, #fbbf24 4px, #f59e0b 4px, #f59e0b 8px);
       border-radius: 4px;
       position: relative;
@@ -351,21 +395,21 @@
     }
 
     .candle-flame {
-      width: 14px;
-      height: 20px;
-      background: radial-gradient(circle, #fef08a 20%, #f97316 70%);
+      width: 16px;
+      height: 24px;
+      background: radial-gradient(circle, #fff 10%, #fef08a 30%, #f97316 70%);
       border-radius: 50% 50% 20% 20%;
       position: absolute;
-      top: -20px;
-      left: -2px;
-      box-shadow: 0 0 12px #f97316, 0 0 20px #ef4444;
-      animation: flameFlicker 0.6s infinite alternate;
+      top: -24px;
+      left: -3px;
+      box-shadow: 0 0 15px #f97316, 0 0 25px #ef4444, 0 0 35px #fbbf24;
+      animation: flameFlicker 0.5s infinite alternate;
       opacity: 0;
     }
 
     @keyframes flameFlicker {
-      0% { transform: scale(1) rotate(-2deg); }
-      100% { transform: scale(1.15) rotate(2deg); }
+      0% { transform: scale(1) rotate(-3deg); }
+      100% { transform: scale(1.2) rotate(3deg); filter: drop-shadow(0 0 8px #fff); }
     }
 
     .step-plate .cake-plate { opacity: 1; transform: translateY(0); }
@@ -376,7 +420,68 @@
     .step-flame .candle-flame { opacity: 1; }
     .candle-flame.out { opacity: 0 !important; }
 
-    /* --- CUPID'S LOVE ARROW LIVE SHOW --- */
+    /* --- ENCHANTED ROSE LIVE SHOW STAGE --- */
+    .rose-stage {
+      width: 100%;
+      height: 310px;
+      border: 1.5px dashed rgba(255, 182, 193, 0.6);
+      border-radius: 22px;
+      background: radial-gradient(circle at center, rgba(38, 5, 28, 0.95) 0%, rgba(6, 1, 5, 0.98) 100%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      box-shadow: inset 0 0 35px rgba(236, 72, 153, 0.3);
+    }
+
+    .glass-dome {
+      width: 140px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(4px);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 70px 70px 10px 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 0 25px rgba(244, 63, 94, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .glass-dome.open {
+      transform: translateY(-80px) scale(0.9);
+      opacity: 0.15;
+    }
+
+    .enchanted-rose {
+      font-size: 4.5rem;
+      filter: drop-shadow(0 0 20px #f43f5e);
+      animation: roseFloat 2.5s infinite ease-in-out;
+      user-select: none;
+    }
+
+    @keyframes roseFloat {
+      0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 18px #f43f5e); }
+      50% { transform: translateY(-10px) scale(1.08); filter: drop-shadow(0 0 30px #ff69b4); }
+    }
+
+    .petal-particle {
+      position: absolute;
+      font-size: 1.5rem;
+      pointer-events: none;
+      animation: petalBurst 4s ease-out forwards;
+    }
+
+    @keyframes petalBurst {
+      0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.6); }
+      100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(360deg) scale(1.4); }
+    }
+
+    /* CUPID'S STAGE */
     .cupid-stage {
       width: 100%;
       height: 320px;
@@ -420,7 +525,7 @@
       transform: translateY(-210px) scale(1.3);
     }
 
-    /* Envelope Letter Elements */
+    /* Letter Elements */
     .envelope-box {
       width: 180px;
       height: 120px;
@@ -452,7 +557,7 @@
       line-height: 1.5;
     }
 
-    /* Fireworks & Interactive Stages */
+    /* Interactive Stages */
     .interactive-stage {
       width: 100%;
       height: 300px;
@@ -464,7 +569,6 @@
       overflow: hidden;
     }
 
-    /* Pop-up Picture Modal */
     .popup-modal {
       display: none;
       position: absolute;
@@ -517,7 +621,7 @@
       object-fit: cover;
     }
 
-    /* Audio Player Floating Component */
+    /* Audio Player */
     .audio-player {
       position: absolute;
       bottom: 14px;
@@ -561,7 +665,7 @@
       display: none;
     }
 
-    /* Floating Heart Shower Element */
+    /* Floating Heart Shower */
     .shower-heart {
       position: absolute;
       font-size: 1.8rem;
@@ -577,7 +681,22 @@
       100% { transform: translateY(-260px) scale(1.2) rotate(20deg); opacity: 0.2; }
     }
 
-    /* Constellation Star Element */
+    /* Sky Lantern */
+    .sky-lantern {
+      position: absolute;
+      font-size: 2.2rem;
+      animation: floatLantern 7s ease-out forwards;
+      pointer-events: none;
+      filter: drop-shadow(0 0 15px #f59e0b);
+      user-select: none;
+    }
+
+    @keyframes floatLantern {
+      0% { transform: translateY(0) scale(0.7); opacity: 1; }
+      100% { transform: translateY(-270px) scale(1.3) rotate(10deg); opacity: 0; }
+    }
+
+    /* Constellation Star */
     .constellation-heart {
       position: absolute;
       font-size: 2.2rem;
@@ -592,7 +711,7 @@
       100% { transform: translateY(-250px) scale(1.3); opacity: 0; }
     }
 
-    /* Love Lock Stage & Key Animation */
+    /* Lock Stage */
     .lock-stage {
       width: 100%;
       height: 300px;
@@ -689,16 +808,25 @@
       </div>
     </div>
 
-    <!-- SHOW 1 MODAL: CAKE SHOW -->
+    <!-- SHOW 1 MODAL: ENHANCED BEAUTIFUL CAKE SHOW -->
     <div class="show-modal" id="cakeShowModal">
       <div class="card-box" id="cakeCardStage" style="width: 100%; max-width: 360px;">
-        <h2 id="cakeStatusText" style="font-size: 1.3rem; margin-bottom: 10px; min-height: 40px;">
-          Baking a special birthday cake... 🎂
+        <h2 id="cakeStatusText" style="font-size: 1.25rem; margin-bottom: 8px; min-height: 40px; color:#ff9ebb;">
+          Baking a glowing birthday cake... 🎂✨
         </h2>
 
         <div class="cake-stage" id="cakeStage">
-          <div class="cake-candle" onclick="blowOutCandle()">
-            <div class="candle-flame" id="candleFlame"></div>
+          <!-- Sparkler Candle Group -->
+          <div class="candle-group">
+            <div class="cake-candle" onclick="blowOutCandle()">
+              <div class="candle-flame" id="candleFlame1"></div>
+            </div>
+            <div class="cake-candle" onclick="blowOutCandle()">
+              <div class="candle-flame" id="candleFlame2"></div>
+            </div>
+            <div class="cake-candle" onclick="blowOutCandle()">
+              <div class="candle-flame" id="candleFlame3"></div>
+            </div>
           </div>
           <div class="cake-frosting"></div>
           <div class="cake-layer-2"></div>
@@ -706,8 +834,8 @@
           <div class="cake-plate"></div>
         </div>
 
-        <p id="cakeHintText" class="hint-text" style="opacity: 0; transition: opacity 0.4s ease;">
-          💨 Tap the candle flame to blow it out & make a wish! ✨
+        <p id="cakeHintText" class="hint-text" style="opacity: 0; transition: opacity 0.4s ease; font-weight: bold;">
+          💨 Tap the candles to blow them out & make a wish! ✨
         </p>
       </div>
     </div>
@@ -725,8 +853,40 @@
       </div>
     </div>
 
-    <!-- PAGE 5: ROMANTIC MESSAGE 1 -->
+    <!-- NEW PAGE 5: BRAND NEW LIVE SHOW - ENCHANTED ROSE -->
     <div class="page" id="page-5">
+      <div class="card-box">
+        <div style="font-size: 38px; margin-bottom: 5px;">🌹✨</div>
+        <h2>Enchanted Love Rose</h2>
+        <p style="margin-bottom: 12px;">Unveil the magical blooming rose of eternal love! 💖</p>
+        <button class="btn" onclick="startRoseShow()">Open Glass Dome 🌹</button>
+        <div class="card-actions">
+          <button class="card-btn" onclick="prevPage()">← Prev</button>
+          <button class="card-btn" onclick="nextPage()">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW SHOW MODAL: ENCHANTED ROSE SHOW -->
+    <div class="show-modal" id="roseModal">
+      <div class="card-box" style="width: 100%;">
+        <h2>🌹 The Magic Rose Dome</h2>
+        <p class="hint-text" id="roseStatusText">Tap the glass dome to set the magical petals free! ✨</p>
+      </div>
+
+      <div class="rose-stage" id="roseStage">
+        <div class="glass-dome" id="glassDomeObj" onclick="bloomEnchantedRose()">
+          <div class="enchanted-rose" id="enchantedRoseObj">🌹</div>
+        </div>
+      </div>
+
+      <button class="btn" style="width: 100%; justify-content: center;" onclick="closeRoseShow()">
+        Continue Story →
+      </button>
+    </div>
+
+    <!-- PAGE 6: ROMANTIC MESSAGE 1 -->
+    <div class="page" id="page-6">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">😁💖</div>
         <p>Tumhari muskurahat meri duniya ka sabse khoobsurat aur pyara hissa hai. Jab tum hasti ho, to lagta hai pure aasmaan mein taare chamak uthe hain! ✨❤️</p>
@@ -737,8 +897,8 @@
       </div>
     </div>
 
-    <!-- PAGE 6: ROMANTIC MESSAGE 2 -->
-    <div class="page" id="page-6">
+    <!-- PAGE 7: ROMANTIC MESSAGE 2 -->
+    <div class="page" id="page-7">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">👑💓</div>
         <p>Tum sirf meri life ka hissa nahi ho, tum meri life ki sabse badi wajah ho. Har choti khushi tumhare saath double ho jaati hai! 🌹✨</p>
@@ -749,8 +909,8 @@
       </div>
     </div>
 
-    <!-- PAGE 7: EXTRA ROMANTIC MESSAGE -->
-    <div class="page" id="page-7">
+    <!-- PAGE 8: ROMANTIC MESSAGE 3 -->
+    <div class="page" id="page-8">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🌟🧸</div>
         <p>Mere paas alfaz kam par jaate hain jab bhi main sochta hoon ke tum meri zindagi mein kitni zaroori ho. Tum meri sabse pyari blessings ho! 💕</p>
@@ -761,8 +921,20 @@
       </div>
     </div>
 
-    <!-- PAGE 8: EXTRA ROMANTIC MESSAGE -->
-    <div class="page" id="page-8">
+    <!-- PAGE 9: ROMANTIC MESSAGE -->
+    <div class="page" id="page-9">
+      <div class="card-box">
+        <div style="font-size: 32px; margin-bottom: 5px;">💌✨</div>
+        <p>Jab se tum meri zindagi mein aayi ho Moto, har ek din ek khoobsurat khwab jaisa lagta hai jisse main kabhi jaagana nahi chahta! ❤️</p>
+        <div class="card-actions">
+          <button class="card-btn" onclick="prevPage()">← Prev</button>
+          <button class="card-btn" onclick="nextPage()">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 10: ROMANTIC MESSAGE -->
+    <div class="page" id="page-10">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🌷✨</div>
         <p>Tumhari baton mein jo sukoon hai na Moto, wo duniya ki kisi cheez mein nahi. Har pal tumhara khayal mere dil ko khush kar deta hai! 💖</p>
@@ -773,8 +945,8 @@
       </div>
     </div>
 
-    <!-- PAGE 9: ROMANTIC MESSAGE -->
-    <div class="page" id="page-9">
+    <!-- PAGE 11: ROMANTIC MESSAGE -->
+    <div class="page" id="page-11">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🕊️💌</div>
         <p>Aapki har nadani, aapki har baat, mere dil mein ghar kar jaati hai. Tum jitni cute ho, utni hi meri rooh ke kareeb ho! 💖✨</p>
@@ -785,8 +957,8 @@
       </div>
     </div>
 
-    <!-- PAGE 10: CUPID'S LOVE SHOW TRIGGER -->
-    <div class="page" id="page-10">
+    <!-- PAGE 12: CUPID'S LOVE SHOW TRIGGER -->
+    <div class="page" id="page-12">
       <div class="card-box">
         <div style="font-size: 38px; margin-bottom: 5px;">💘🏹</div>
         <h2>Cupid's Love Shot</h2>
@@ -834,8 +1006,8 @@
       </div>
     </div>
 
-    <!-- PAGE 11: HEART SHOWER TRIGGER -->
-    <div class="page" id="page-11">
+    <!-- PAGE 13: HEART SHOWER TRIGGER -->
+    <div class="page" id="page-13">
       <div class="card-box">
         <div style="font-size: 38px; margin-bottom: 5px;">🌧️💖</div>
         <h2>Heart Shower Magic</h2>
@@ -866,8 +1038,8 @@
       </button>
     </div>
 
-    <!-- PAGE 12: ROMANTIC MESSAGE 3 -->
-    <div class="page" id="page-12">
+    <!-- PAGE 14: ROMANTIC MESSAGE -->
+    <div class="page" id="page-14">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🥺💖</div>
         <p>Thank you for meri zindagi ka itna pyara hissa banne ke liye. Har lamha tumhare saath aur bhi khoobsurat lagta hai. 🌹</p>
@@ -878,8 +1050,8 @@
       </div>
     </div>
 
-    <!-- NEW PAGE 13: NEW ROMANTIC MESSAGE 1 -->
-    <div class="page" id="page-13">
+    <!-- PAGE 15: ROMANTIC MESSAGE -->
+    <div class="page" id="page-15">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🌸✨</div>
         <p>Tumhare aane se meri zindagi mein aise rang bhar gaye hain jaise bahar ke mausam mein phool khilte hain! 💕</p>
@@ -890,8 +1062,40 @@
       </div>
     </div>
 
-    <!-- PAGE 14: EXTRA ROMANTIC MESSAGE -->
-    <div class="page" id="page-14">
+    <!-- PAGE 16: LIVE SHOW TRIGGER - SKY LANTERNS -->
+    <div class="page" id="page-16">
+      <div class="card-box">
+        <div style="font-size: 38px; margin-bottom: 5px;">🏮✨</div>
+        <h2>Love Wish Lanterns</h2>
+        <p style="margin-bottom: 12px;">Release magical sky lanterns to light up the night with our romantic wishes! 🌌💕</p>
+        <button class="btn" onclick="startLanternShow()">Release Sky Lanterns 🏮</button>
+        <div class="card-actions">
+          <button class="card-btn" onclick="prevPage()">← Prev</button>
+          <button class="card-btn" onclick="nextPage()">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHOW MODAL: SKY LANTERNS SHOW -->
+    <div class="show-modal" id="lanternModal">
+      <div class="card-box" style="width: 100%;">
+        <h2>🏮 Floating Wish Lanterns</h2>
+        <p class="hint-text">Tap the dark sky to release glowing lanterns carrying our love! ✨</p>
+      </div>
+
+      <div class="interactive-stage" id="lanternSky" onclick="triggerLantern(event)">
+        <p style="color: #fbbf24; opacity: 0.85; pointer-events: none; text-align: center; margin-top: 130px;">
+          🏮 Tap to Launch Sky Lanterns 🏮
+        </p>
+      </div>
+
+      <button class="btn" style="width: 100%; justify-content: center;" onclick="closeLanternShow()">
+        Continue Story →
+      </button>
+    </div>
+
+    <!-- PAGE 17: ROMANTIC MESSAGE -->
+    <div class="page" id="page-17">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">💎✨</div>
         <p>Tum bilkul ek anmol heere ki tarah ho meri zindagi mein. Tumhari jagah koi nahi le sakta, Na abhi na kabhi! 💍💖</p>
@@ -902,8 +1106,8 @@
       </div>
     </div>
 
-    <!-- PAGE 15: ROMANTIC MESSAGE -->
-    <div class="page" id="page-15">
+    <!-- PAGE 18: ROMANTIC MESSAGE -->
+    <div class="page" id="page-18">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🌸💫</div>
         <p>Zindagi ke har safar mein, har mod par, tumhara haath mere haath mein ho... Yeh meri sabse badi tamanna hai! ❤️💍</p>
@@ -914,8 +1118,20 @@
       </div>
     </div>
 
-    <!-- NEW PAGE 16: NEW LIVE SHOW TRIGGER - LOVE LOCK & KEY -->
-    <div class="page" id="page-16">
+    <!-- PAGE 19: ROMANTIC MESSAGE -->
+    <div class="page" id="page-19">
+      <div class="card-box">
+        <div style="font-size: 32px; margin-bottom: 5px;">🕯️💖</div>
+        <p>Tumhari presence mere liye sukoon ki woh shama hai jo meri poori duniya ko hamesha roshan rakhti hai! ✨</p>
+        <div class="card-actions">
+          <button class="card-btn" onclick="prevPage()">← Prev</button>
+          <button class="card-btn" onclick="nextPage()">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 20: LIVE SHOW TRIGGER - LOVE LOCK & KEY -->
+    <div class="page" id="page-20">
       <div class="card-box">
         <div style="font-size: 38px; margin-bottom: 5px;">🔐🗝️</div>
         <h2>Love Lock & Key</h2>
@@ -928,7 +1144,7 @@
       </div>
     </div>
 
-    <!-- NEW SHOW MODAL: LOVE LOCK & KEY SHOW -->
+    <!-- SHOW MODAL: LOVE LOCK & KEY SHOW -->
     <div class="show-modal" id="lockModal">
       <div class="card-box" style="width: 100%;">
         <h2>🔐 Love Lock Ceremony</h2>
@@ -945,8 +1161,8 @@
       </button>
     </div>
 
-    <!-- PAGE 17: EXTRA ROMANTIC MESSAGE -->
-    <div class="page" id="page-17">
+    <!-- PAGE 21: ROMANTIC MESSAGE -->
+    <div class="page" id="page-21">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🌺🥰</div>
         <p>Mera har din tumhare saath special ban jata hai. Jab bhi tum mere paas hoti ho, lagta hai saari khushiyan mil gayi hain! 🕊️❤️</p>
@@ -957,8 +1173,8 @@
       </div>
     </div>
 
-    <!-- NEW PAGE 18: NEW ROMANTIC MESSAGE 2 -->
-    <div class="page" id="page-18">
+    <!-- PAGE 22: ROMANTIC MESSAGE -->
+    <div class="page" id="page-22">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">👑💖</div>
         <p>Main hamesha Allah ka shukr ada karta hoon ke unhone mujhe tum jaisi pyari aur caring partner di! 🤲✨</p>
@@ -969,8 +1185,20 @@
       </div>
     </div>
 
-    <!-- PAGE 19: ROMANTIC MESSAGE 4 -->
-    <div class="page" id="page-19">
+    <!-- PAGE 23: ROMANTIC MESSAGE -->
+    <div class="page" id="page-23">
+      <div class="card-box">
+        <div style="font-size: 32px; margin-bottom: 5px;">✨💓</div>
+        <p>Chahe hum kitni bhi door kyu na ho, har ek heartbeat bas ek hi naam pukarti hai: Hooria Moto! 💕</p>
+        <div class="card-actions">
+          <button class="card-btn" onclick="prevPage()">← Prev</button>
+          <button class="card-btn" onclick="nextPage()">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 24: ROMANTIC MESSAGE -->
+    <div class="page" id="page-24">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🕊️✨</div>
         <p>Chahe jitni bhi doori ho, mera dil hamesha tumhare paas hi rehta hai. Tum mera home ho, mera sukoon ho! 🏡❤️</p>
@@ -981,8 +1209,8 @@
       </div>
     </div>
 
-    <!-- PAGE 20: REPLACED SHOW - LOVE CONSTELLATION SHOW TRIGGER -->
-    <div class="page" id="page-20">
+    <!-- PAGE 25: SHOW TRIGGER - LOVE CONSTELLATION -->
+    <div class="page" id="page-25">
       <div class="card-box">
         <div style="font-size: 38px; margin-bottom: 5px;">🌌✨</div>
         <h2>Love Constellations</h2>
@@ -1013,8 +1241,8 @@
       </button>
     </div>
 
-    <!-- PAGE 21: ROMANTIC MESSAGE 5 -->
-    <div class="page" id="page-21">
+    <!-- PAGE 26: ROMANTIC MESSAGE -->
+    <div class="page" id="page-26">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">👩‍❤️‍👨✨</div>
         <p>Tum meri sabse achi friend ho, meri love ho, meri strength ho. Tumhare bina life bilkul adhuri si lagti hai. 💕</p>
@@ -1025,8 +1253,8 @@
       </div>
     </div>
 
-    <!-- NEW PAGE 22: NEW ROMANTIC MESSAGE 3 -->
-    <div class="page" id="page-22">
+    <!-- PAGE 27: ROMANTIC MESSAGE -->
+    <div class="page" id="page-27">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🧸💘</div>
         <p>Har baar jab tum hasti ho na Moto, lagta hai meri saari thakan aur pareshani door ho gayi! 💕</p>
@@ -1037,8 +1265,20 @@
       </div>
     </div>
 
-    <!-- PAGE 23: ROMANTIC MESSAGE -->
-    <div class="page" id="page-23">
+    <!-- PAGE 28: ROMANTIC MESSAGE -->
+    <div class="page" id="page-28">
+      <div class="card-box">
+        <div style="font-size: 32px; margin-bottom: 5px;">🕊️💎</div>
+        <p>Duniya ki sabse khoobsurat feeling yeh janna hai ke tum meri ho, aur main hamesha tumhara! 💍✨</p>
+        <div class="card-actions">
+          <button class="card-btn" onclick="prevPage()">← Prev</button>
+          <button class="card-btn" onclick="nextPage()">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 29: ROMANTIC MESSAGE -->
+    <div class="page" id="page-29">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">✨🧿</div>
         <p>Kisi ki nazar na lage humare iss pyare se rishte ko. Tum meri khushiyon ki wajah ho aur rahangi hamesha! 🤲❤️</p>
@@ -1049,8 +1289,8 @@
       </div>
     </div>
 
-    <!-- PAGE 24: EXTRA ROMANTIC MESSAGE -->
-    <div class="page" id="page-24">
+    <!-- PAGE 30: ROMANTIC MESSAGE -->
+    <div class="page" id="page-30">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🌙✨</div>
         <p>Jaise chaand ke bina raat adhuri lagti hai, vaise hi tumhare bina meri poori life adhuri hai. Tum mera perfect match ho! 💖</p>
@@ -1061,8 +1301,8 @@
       </div>
     </div>
 
-    <!-- NEW PAGE 25: NEW ROMANTIC MESSAGE 4 -->
-    <div class="page" id="page-25">
+    <!-- PAGE 31: ROMANTIC MESSAGE -->
+    <div class="page" id="page-31">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">💫💌</div>
         <p>Agar mujhe dobara zindagi mile, to main har baaar sirf aur sirf tumhein hi chununga! 💕♾️</p>
@@ -1073,8 +1313,8 @@
       </div>
     </div>
 
-    <!-- PAGE 26: ROMANTIC MESSAGE -->
-    <div class="page" id="page-26">
+    <!-- PAGE 32: ROMANTIC MESSAGE -->
+    <div class="page" id="page-32">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">💐💓</div>
         <p>Jab se tum meri life mein aayi ho, har din ek khoobsurat festival lagta hai. You make everything so beautiful! 🌸</p>
@@ -1085,8 +1325,20 @@
       </div>
     </div>
 
-    <!-- PAGE 27: EXTRA ROMANTIC MESSAGE -->
-    <div class="page" id="page-27">
+    <!-- PAGE 33: ROMANTIC MESSAGE -->
+    <div class="page" id="page-33">
+      <div class="card-box">
+        <div style="font-size: 32px; margin-bottom: 5px;">🌺🥰</div>
+        <p>Tumhare saath guzara har ek chota lamha meri zindagi ki sabse badi aur keemti memory ban jata hai! 💖</p>
+        <div class="card-actions">
+          <button class="card-btn" onclick="prevPage()">← Prev</button>
+          <button class="card-btn" onclick="nextPage()">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 34: ROMANTIC MESSAGE -->
+    <div class="page" id="page-34">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">♾️💫</div>
         <p>Main tumse kitna pyaar karta hoon, yeh har ghadi prove karne ki zaroorat nahi... Yeh bas mera dil janta hai jo sirf tumhare liye dhadakta hai! 💓</p>
@@ -1097,8 +1349,8 @@
       </div>
     </div>
 
-    <!-- PAGE 28: SECRET LOVE LETTER SHOW TRIGGER -->
-    <div class="page" id="page-28">
+    <!-- PAGE 35: SECRET LOVE LETTER SHOW TRIGGER -->
+    <div class="page" id="page-35">
       <div class="card-box">
         <div style="font-size: 38px; margin-bottom: 5px;">💌✨</div>
         <h2>A Sealed Love Note</h2>
@@ -1111,7 +1363,7 @@
       </div>
     </div>
 
-    <!-- SHOW 5 MODAL: LOVE LETTER SHOW -->
+    <!-- SHOW MODAL: LOVE LETTER SHOW -->
     <div class="show-modal" id="letterModal">
       <div class="card-box" style="width: 100%;">
         <h2>💌 Secret Love Note</h2>
@@ -1130,8 +1382,8 @@
       </button>
     </div>
 
-    <!-- PAGE 29: ROMANTIC MESSAGE 6 -->
-    <div class="page" id="page-29">
+    <!-- PAGE 36: ROMANTIC MESSAGE -->
+    <div class="page" id="page-36">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">💫🧸</div>
         <p>Suno Moto... Meri har dua mein tumhara naam hota hai, aur har khwahish mein tumhara saath! 🤲💍</p>
@@ -1142,8 +1394,8 @@
       </div>
     </div>
 
-    <!-- NEW PAGE 30: NEW ROMANTIC MESSAGE 5 -->
-    <div class="page" id="page-30">
+    <!-- PAGE 37: ROMANTIC MESSAGE -->
+    <div class="page" id="page-37">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🌹💞</div>
         <p>Tum meri zindagi ki sabse pyari aur sabse khoobsurat mehfuz jagah ho. Love you so much Moto! ✨💖</p>
@@ -1154,8 +1406,8 @@
       </div>
     </div>
 
-    <!-- PAGE 31: ROMANTIC MESSAGE 7 -->
-    <div class="page" id="page-31">
+    <!-- PAGE 38: ROMANTIC MESSAGE -->
+    <div class="page" id="page-38">
       <div class="card-box">
         <div style="font-size: 32px; margin-bottom: 5px;">🤝🔥</div>
         <p>We are truly Partners in Crime! Har Masti, Har Khushi aur Har Lamhe mein tumhara saath meri sabse badi kismat hai. 😉✨</p>
@@ -1166,8 +1418,8 @@
       </div>
     </div>
 
-    <!-- PAGE 32: FIREWORKS SHOW TRIGGER -->
-    <div class="page" id="page-32">
+    <!-- PAGE 39: FIREWORKS SHOW TRIGGER -->
+    <div class="page" id="page-39">
       <div class="card-box">
         <h1 style="font-size: 2.1rem; margin-bottom: 12px;">💖 I LOVE YOU 💖</h1>
         <div style="text-align: left; margin-bottom: 15px; line-height: 1.9; width: 100%;">
@@ -1182,7 +1434,7 @@
       </div>
     </div>
 
-    <!-- SHOW 6 MODAL: FIREWORKS SHOW -->
+    <!-- SHOW MODAL: FIREWORKS SHOW -->
     <div class="show-modal" id="fireworksModal">
       <div class="card-box" style="width: 100%;">
         <h2>🎆 Touch Fireworks Show</h2>
@@ -1200,8 +1452,8 @@
       </button>
     </div>
 
-    <!-- PAGE 33: PROPOSAL QUESTION -->
-    <div class="page" id="page-33">
+    <!-- PAGE 40: PROPOSAL QUESTION -->
+    <div class="page" id="page-40">
       <div class="card-box">
         <div style="font-size: 45px; margin-bottom: 5px;">🥺❓</div>
         <h2 style="font-size: 1.8rem; margin-bottom: 5px;">Do You Love Me? 💖</h2>
@@ -1214,7 +1466,7 @@
       </div>
     </div>
 
-    <!-- PAGE 34 / FINAL POPUP MODAL (AASHIR.png) -->
+    <!-- PAGE 40 / FINAL POPUP MODAL (AASHIR.png) -->
     <div class="popup-modal" id="popupModal">
       <div class="popup-card">
         <div class="popup-img-wrapper">
@@ -1243,11 +1495,12 @@
 
   <script>
     let currentPage = 1;
-    const totalPages = 33;
+    const totalPages = 40;
     const bgMusic = document.getElementById('bgMusic');
     const musicToggleBtn = document.getElementById('musicToggleBtn');
     let isPlaying = false;
     let candleBlown = false;
+    let roseBloomed = false;
 
     /* Floating Hearts Animation Background */
     function createFloatingHearts() {
@@ -1307,7 +1560,59 @@
       }
     }
 
-    /* Cake Animation Logic */
+    /* --- NEW LIVE SHOW: ENCHANTED ROSE --- */
+    function startRoseShow() {
+      roseBloomed = false;
+      document.getElementById('glassDomeObj').classList.remove('open');
+      document.getElementById('roseStatusText').innerText = 'Tap the glass dome to set the magical petals free! ✨';
+      document.getElementById('roseModal').classList.add('show');
+    }
+
+    function bloomEnchantedRose() {
+      if (roseBloomed) return;
+      roseBloomed = true;
+
+      const dome = document.getElementById('glassDomeObj');
+      const stage = document.getElementById('roseStage');
+      const statusText = document.getElementById('roseStatusText');
+
+      dome.classList.add('open');
+      statusText.innerHTML = '✨ A Love That Blooms Forever for Hooria! 🌹';
+
+      /* Create Bursting Rose Petals */
+      const petals = ['🌹', '🌸', '💖', '✨', '💕'];
+      for (let i = 0; i < 25; i++) {
+        const p = document.createElement('div');
+        p.className = 'petal-particle';
+        p.innerText = petals[Math.floor(Math.random() * petals.length)];
+        
+        const dx = (Math.random() * 260 - 130) + 'px';
+        const dy = (Math.random() * -220 - 20) + 'px';
+        p.style.setProperty('--dx', dx);
+        p.style.setProperty('--dy', dy);
+        p.style.left = '45%';
+        p.style.top = '50%';
+
+        stage.appendChild(p);
+        setTimeout(() => p.remove(), 4000);
+      }
+
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 120,
+          spread: 90,
+          origin: { y: 0.6 },
+          colors: ['#f43f5e', '#ff69b4', '#fbbf24', '#ffffff']
+        });
+      }
+    }
+
+    function closeRoseShow() {
+      document.getElementById('roseModal').classList.remove('show');
+      nextPage();
+    }
+
+    /* Multi-Candle Cake Animation Logic */
     function startCakeShow() {
       const modal = document.getElementById('cakeShowModal');
       const stage = document.getElementById('cakeCardStage');
@@ -1317,9 +1622,13 @@
 
       modal.classList.add('show');
       stage.className = 'card-box';
-      document.getElementById('candleFlame').classList.remove('out');
+      
+      document.getElementById('candleFlame1').classList.remove('out');
+      document.getElementById('candleFlame2').classList.remove('out');
+      document.getElementById('candleFlame3').classList.remove('out');
+
       hintText.style.opacity = '0';
-      statusText.innerHTML = 'Baking something special for you... 🎂';
+      statusText.innerHTML = 'Baking a glowing birthday cake... 🎂✨';
 
       setTimeout(() => { stage.classList.add('step-plate'); }, 300);
       setTimeout(() => { stage.classList.add('step-layer1'); }, 800);
@@ -1338,12 +1647,15 @@
       if (candleBlown) return;
       candleBlown = true;
 
-      document.getElementById('candleFlame').classList.add('out');
+      document.getElementById('candleFlame1').classList.add('out');
+      document.getElementById('candleFlame2').classList.add('out');
+      document.getElementById('candleFlame3').classList.add('out');
+
       document.getElementById('cakeStatusText').innerHTML = 'Happy Birthday Hooria! 🎉🎂';
       document.getElementById('cakeHintText').innerHTML = '✨ Wish Granted! Moving to surprise... ❤️';
 
       if (typeof confetti === 'function') {
-        confetti({ particleCount: 150, spread: 90, origin: { y: 0.6 } });
+        confetti({ particleCount: 180, spread: 100, origin: { y: 0.6 } });
       }
 
       setTimeout(() => {
@@ -1422,6 +1734,40 @@
 
     function closeHeartShowerShow() {
       document.getElementById('heartShowerModal').classList.remove('show');
+      nextPage();
+    }
+
+    /* --- LIVE SHOW: SKY LANTERNS --- */
+    function startLanternShow() {
+      document.getElementById('lanternModal').classList.add('show');
+    }
+
+    function triggerLantern(e) {
+      const sky = document.getElementById('lanternSky');
+      const rect = sky.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+
+      const lantern = document.createElement('div');
+      lantern.className = 'sky-lantern';
+      lantern.innerText = '🏮';
+      lantern.style.left = (clickX - 20) + 'px';
+      lantern.style.bottom = '15px';
+
+      sky.appendChild(lantern);
+      setTimeout(() => lantern.remove(), 7000);
+
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 25,
+          spread: 60,
+          origin: { x: clickX / rect.width, y: 0.8 },
+          colors: ['#fbbf24', '#f59e0b', '#ffffff']
+        });
+      }
+    }
+
+    function closeLanternShow() {
+      document.getElementById('lanternModal').classList.remove('show');
       nextPage();
     }
 
@@ -1542,7 +1888,7 @@
       const activePage = document.getElementById(`page-${currentPage}`);
       if (activePage) activePage.classList.add('active');
 
-      if (currentPage === 33) resetNoButton();
+      if (currentPage === 40) resetNoButton();
     }
 
     function nextPage() {
